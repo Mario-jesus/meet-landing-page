@@ -21,6 +21,13 @@ $spacing-900: 4.5rem;// 72px
 $spacing-1000: 5rem;// 80px
 $spacing-1400: 7rem;// 112px
 
+%container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
 body {
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
@@ -31,6 +38,10 @@ body {
   font-size: 2.5rem;
   line-height: 110%;
   color: $slate-900;
+}
+
+.text-preset-1 {
+  font-weight: 900;
 }
 
 .text-preset-2 {
@@ -45,8 +56,227 @@ body {
 
 .text-preset-4, .text-preset-5 {
   font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
 }
 
 .text-preset-5 {
-  line-height: 150%;
+  font-weight: 900;
+}
+
+.text-slate-600 {
+  color: $slate-600;
+}
+
+.text-white {
+  color: $white;
+}
+
+.meet-landing-page-number {
+  @extend .text-preset-5;
+  font-weight: 900;
+  color: $slate-600;
+  margin-inline: auto;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    background-color: $slate-300;
+    width: 1px;
+    height: $spacing-1000;
+    margin-inline: auto;
+    display: block;
+  }
+
+  &__circle {
+    background-color: $white;
+    width: $spacing-700;
+    height: $spacing-700;
+    border: 1px solid $slate-300;
+    border-radius: 50%;
+    text-align: center;
+    margin-inline: auto;
+    line-height: $spacing-700;
+  }
+}
+
+.meet-landing-page-button {
+  @extend .text-preset-5;
+  font-weight: 900;
+  background-color: $cyan-600;
+  color: $white;
+  padding-inline: $spacing-500;
+  padding-block: $spacing-200;
+  border-radius: 1.8125rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 300ms;
+  display: inline-flex;
+  gap: $spacing-50;
+
+  &:hover {
+    background-color: #71C0D4;
+  }
+
+  & span {
+    color: $cyan-300;
+  }
+
+  &--purple {
+    background-color: $purple-600;
+
+    &:hover {
+      background-color: #B18BDD;
+    }
+
+    & span {
+      color: $purple-300;
+    }
+  }
+}
+
+.meet-landing-page-nav {
+  padding-top: 3rem;
+  padding-inline: $spacing-1000;
+  text-align: center;
+
+  &__logo {
+    width: 118px;
+    height: 28px;
+    display: inline-block;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.meet-landing-page-hero {
+  padding-top: $spacing-800;
+  padding-bottom: $spacing-400;
+  display: grid;
+  row-gap: 3rem;
+
+  &__faces-desktop {
+    display: none;
+  }
+
+  &__faces-movil {
+    width: 100%;
+    overflow: hidden;
+
+    &-image {
+      width: 113.53125%;
+      min-width: 433px;
+      min-height: 160px;
+      object-fit: cover;
+      position: relative;
+      left: -6.765625%;
+      right: -6.765625%;
+    }
+  }
+
+  &__texts {
+    @extend %container;
+    width: 81.3333333%;
+    text-align: center;
+    display: grid;
+    gap: $spacing-300;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    column-gap: 1.0625rem;
+  }
+}
+
+.meet-landing-page-content {
+  @extend %container;
+  width: 82.933333333%;
+  margin-top: $spacing-400;
+  margin-bottom: $spacing-800;
+  display: grid;
+  row-gap: $spacing-800;
+
+  &__collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: $spacing-100;
+    }
+  }
+
+  &__texts {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__paragraph {
+    color: $slate-600;
+  }
+}
+
+.meet-landing-page-footer {
+  padding-top: 6.75rem;
+  text-align: center;
+  position: relative;
+
+  &__number {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    inset-inline: 0;
+  }
+
+  &__content {
+    background-image: url('../assets/mobile/image-footer.jpg');
+    background-color: $cyan-600;
+    background-size: cover;
+    background-position: center;
+    padding: $spacing-800 $spacing-400;
+    display: grid;
+    justify-items: center;
+    row-gap: $spacing-300;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      background-color: $cyan-600;
+      opacity: 85%;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+    }
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__paragraph {
+    color: $white;
+  }
 }

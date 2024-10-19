@@ -19,5 +19,8 @@
 *.css
 *.css.map
 
+# Ignore node_modules
+node_modules
+
 # Ignore normalize.css
 !normalize.css
