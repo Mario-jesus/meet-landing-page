@@ -46,12 +46,15 @@ body {
 
 .text-preset-2 {
   font-size: 2rem;
+  font-weight: 900;
 }
 
 .text-preset-3 {
   font-size: 0.75rem;
+  font-weight: 900;
   letter-spacing: 0.25rem;
   color: $cyan-600;
+  text-transform: uppercase;
 }
 
 .text-preset-4, .text-preset-5 {
@@ -198,6 +201,14 @@ body {
     row-gap: 1rem;
     column-gap: 1.0625rem;
   }
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: $spacing-800;
+
+    &__texts {
+      width: 58.3725%;
+    }
+  }
 }
 
 .meet-landing-page-content {
@@ -212,7 +223,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1rem;
+    gap: $spacing-200;
 
     &-image {
       width: 100%;
@@ -225,16 +236,29 @@ body {
 
   &__texts {
     text-align: center;
+    max-width: 504px;
+    margin-inline: auto;
   }
 
   &__title {
-    margin-bottom: 2rem;
+    margin-bottom: $spacing-400;
     display: grid;
-    gap: 1rem;
+    gap: $spacing-200;
   }
 
   &__paragraph {
     color: $slate-600;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 91.665%;
+    margin-top: $spacing-700;
+
+    &__collage {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      gap: $spacing-300;
+    }
   }
 }
 
@@ -256,9 +280,6 @@ body {
     background-size: cover;
     background-position: center;
     padding: $spacing-800 $spacing-400;
-    display: grid;
-    justify-items: center;
-    row-gap: $spacing-300;
     position: relative;
     z-index: 1;
 
@@ -272,11 +293,39 @@ body {
     }
   }
 
+  &__texts {
+    max-width: 504px;
+    margin-inline: auto;
+    display: grid;
+    justify-items: center;
+    row-gap: $spacing-300;
+  }
+
   &__title {
     color: $white;
   }
 
   &__paragraph {
     color: $white;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__content {
+      background-image: url('../assets/tablet/image-footer.jpg');
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .text-preset-1 {
+    font-size: 3rem;
+  }
+
+  .text-preset-2 {
+    font-size: 2.25rem;
+  }
+
+  .text-preset-3 {
+    font-size: 0.875rem;
   }
 }
