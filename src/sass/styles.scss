@@ -159,6 +159,7 @@ body {
 .meet-landing-page-hero {
   padding-top: $spacing-800;
   padding-bottom: $spacing-400;
+  overflow: hidden;
   display: grid;
   row-gap: 3rem;
 
@@ -207,6 +208,30 @@ body {
 
     &__texts {
       width: 58.3725%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+
+    &__faces-movil {
+      display: none
+    }
+
+    &__faces-desktop {
+      $translate: -7%;
+      display: block;
+      position: relative;
+
+      &-image--left {
+        position: relative;
+        left: $translate;
+      }
+
+      &-image--right {
+        position: relative;
+        right: $translate;
+      }
     }
   }
 }
@@ -296,9 +321,15 @@ body {
   &__texts {
     max-width: 504px;
     margin-inline: auto;
+    text-align: left;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    justify-content: space-between;
     justify-items: center;
+    align-items: start;
     row-gap: $spacing-300;
+    column-gap: $spacing-400;
   }
 
   &__title {
@@ -312,6 +343,14 @@ body {
   @media screen and (min-width: 768px) {
     &__content {
       background-image: url('../assets/tablet/image-footer.jpg');
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__texts {
+      max-width: 1020px;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: auto;
     }
   }
 }
