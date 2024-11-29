@@ -307,8 +307,10 @@ body {
 }
 
 .meet-landing-page-footer {
+  max-height: 420px;
   padding-top: 6.75rem;
   text-align: center;
+  overflow: hidden;
   position: relative;
 
   &__number {
@@ -323,6 +325,7 @@ body {
     background-color: $cyan-600;
     background-size: cover;
     background-position: center;
+    max-height: 312px;
     padding: $spacing-800 $spacing-400;
     position: relative;
     z-index: 1;
