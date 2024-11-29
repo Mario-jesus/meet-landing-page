@@ -154,6 +154,10 @@ body {
       object-fit: cover;
     }
   }
+
+  @media screen and (min-width: 1028px) {
+    padding-top: $spacing-1000;
+  }
 }
 
 .meet-landing-page-hero {
@@ -185,6 +189,7 @@ body {
   &__texts {
     @extend %container;
     width: 81.3333333%;
+    max-width: 448.3px;
     text-align: center;
     display: grid;
     gap: $spacing-300;
@@ -233,12 +238,17 @@ body {
         right: $translate;
       }
     }
+
+    &__texts {
+      gap: $spacing-400;
+    }
   }
 }
 
 .meet-landing-page-content {
   @extend %container;
   width: 82.933333333%;
+  max-width: 1120px;
   margin-top: $spacing-400;
   margin-bottom: $spacing-800;
   display: grid;
@@ -283,6 +293,14 @@ body {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1fr;
       gap: $spacing-300;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: $spacing-900;
+
+    &__collage {
+      gap: $spacing-400;
     }
   }
 }
@@ -343,10 +361,15 @@ body {
   @media screen and (min-width: 768px) {
     &__content {
       background-image: url('../assets/tablet/image-footer.jpg');
+      padding-inline: 8.25rem;
     }
   }
 
   @media screen and (min-width: 1024px) {
+    &__content {
+      padding: 7rem 10rem;
+    }
+
     &__texts {
       max-width: 1020px;
       grid-template-columns: repeat(3, auto);
@@ -366,5 +389,23 @@ body {
 
   .text-preset-3 {
     font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text-preset-1 {
+    font-size: $spacing-800;
+  }
+
+  .text-preset-2 {
+    font-size: $spacing-500;
+  }
+
+  .text-preset-3 {
+    font-size: $spacing-200;
+  }
+
+  .text-preset-4 {
+    font-size: 1.125rem;
   }
 }
