@@ -32,6 +32,7 @@ body {
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  background-color: $white;
 }
 
 .text-preset-1, .text-preset-2, .text-preset-3, .text-preset-4 {
@@ -349,8 +350,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     justify-content: space-between;
-    justify-items: center;
-    align-items: center;
+    place-items: center;
     row-gap: $spacing-300;
     column-gap: $spacing-400;
   }
